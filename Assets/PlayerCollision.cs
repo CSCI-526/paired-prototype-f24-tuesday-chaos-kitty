@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PlayerCollisionj : MonoBehaviour
+public class PlayerCollision : MonoBehaviour
 {
     public TextMeshProUGUI winText; // Reference to the "You Win!" Text object
     public string targetTag = "TargetTag"; // Tag of the object that triggers the win condition

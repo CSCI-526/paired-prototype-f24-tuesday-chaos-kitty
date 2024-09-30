@@ -17,21 +17,24 @@ public class PlayerControl : MonoBehaviour
     }
 
 
-    void Update()
+    void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         verticalInput = Input.GetAxis("Vertical");
 
         // Move forward
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
+        transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput, Space.Self);
 
         // Make turns
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
 
+        
+    }
+     void Update() {
         // Jump
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
+        }  
     }
 }
