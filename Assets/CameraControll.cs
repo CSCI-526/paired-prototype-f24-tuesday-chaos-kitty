@@ -5,9 +5,9 @@ using static UnityEngine.GraphicsBuffer;
 
 public class CameraControll : MonoBehaviour
 {
-    public GameObject player;
+    public Transform player;
     private Vector3 offset = new Vector3(0, 1, -4);
-
+    public float rotationSpeed = 5.0f;
 
     void Start()
     {
@@ -16,8 +16,10 @@ public class CameraControll : MonoBehaviour
 
     void LateUpdate()
     {
-
-        transform.position = player.transform.position + offset;
+        Quaternion playerRotation = player.rotation;
+        Vector3 desiredPosition = player.position + playerRotation * offset;
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, rotationSpeed * Time.deltaTime);
+        transform.LookAt(player);
 
     }
 }

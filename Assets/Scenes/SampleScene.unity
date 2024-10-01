@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 12376065}
   m_Layer: 0
   m_Name: Bottle5
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 140731845}
   m_Layer: 0
   m_Name: Bottle8
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,6 +694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 56890254}
   targetTag: TargetTag
+  obstacleTag: ObstacleTag
 --- !u!54 &327258787
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -736,7 +737,7 @@ GameObject:
   - component: {fileID: 348960602}
   m_Layer: 0
   m_Name: Bottle7
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,7 +977,7 @@ GameObject:
   - component: {fileID: 454392974}
   m_Layer: 0
   m_Name: Bottle2
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1788,7 +1789,7 @@ GameObject:
   - component: {fileID: 777857179}
   m_Layer: 0
   m_Name: Bottle6
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2165,7 +2166,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 38
+  field of view: 43
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2210,7 +2211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20dfbc0836651f64bab079d2e4ee3999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 93671584}
+  player: {fileID: 327258784}
+  rotationSpeed: 5
 --- !u!1 &1358815492
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,7 +2333,7 @@ GameObject:
   - component: {fileID: 1676917863}
   m_Layer: 0
   m_Name: Bottle4
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2432,7 +2434,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676917858}
   serializedVersion: 4
-  m_Mass: 3
+  m_Mass: 6
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2567,6 +2569,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a12ee7f0f1cf00c438af7ee96c492fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
+  startTime: 45
   countdownText: {fileID: 2029710501}
   ReplayButton: {fileID: 490867122}
 --- !u!1 &1844455283
@@ -2689,7 +2693,7 @@ GameObject:
   - component: {fileID: 1890425022}
   m_Layer: 0
   m_Name: Bottle3
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3128,7 +3132,7 @@ GameObject:
   - component: {fileID: 2112899877}
   m_Layer: 0
   m_Name: Bottle1
-  m_TagString: Untagged
+  m_TagString: ObstacleTag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3260,6 +3264,7 @@ GameObject:
   - component: {fileID: 2126912951}
   - component: {fileID: 2126912950}
   - component: {fileID: 2126912949}
+  - component: {fileID: 2126912953}
   m_Layer: 0
   m_Name: Food
   m_TagString: TargetTag
@@ -3282,7 +3287,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3353,6 +3358,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &2126912953
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2126912948}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
